@@ -1,0 +1,5 @@
+rootProject.name = 'auth-item-jwt'
+
+include 'authsvc'
+include 'itemsvc'
+
