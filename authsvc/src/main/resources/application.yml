@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: authsvc
+
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "jdbc:postgresql://localhost/userdb"
+    password: "userdb_password"
+    username: "userdb_user"
+
+
+config:
+  oauth2:
+    clientid: bobkoby5i_id
+    clientSecret: bobkoby5i_secret
+    accesstoken_validity_seconds: 3600
+    refreshtoken_validity_seconds: 18000
+    privateKey: -----BEGIN RSA PRIVATE KEY-----MIIEoAIBAAKCAQEAm6euFoDhEErtMzSCnwTU6eBcZr5hC9foLef+s39vkZU9WkK9VGIICxIh0KxKTc8fsoWnGw4NPzO9SHHrGd0WIW4dDt8cSoTWo7bqJ7faXHEUGnfaDwgAPoCqiYVBYzqdx5hPnBbPHDBB11noSVMUjY5FztIySq+pvKwKd0ru461JGxRavr15UAVw1U9ryYAsDL+gqkfKqv+xZ3DvX48yoKOdiudc5fTEfnuJQLW3uZrbz8zxPzRwdGhjy6zfYJXinbwga7LIsBpX1rlpsYxBuOvvcutZZ4p9vVMth3cRtcuS3dP95JqmlmGyD1yoBZpQRuWvu2zink5WTVHEK9eNWwIBJQKCAQAMnuSaCnMc/yf9O5vjYUGyGRw/rpI/OwT8zZ8HooyBbPci/n4NwsJhwzMsmFkNOk6tnCJOTT9YJsood/B3t/rgHa9UO5qClSYo8ye+B/zyvQ93xIdNU6z+JhuqSRMjuKUCWHUoVOBcO0Ob1tt7kR1Xlen8AzSCmJ8PTDgzL5bUMIPx51StEESc9fxRS4xbJofswyA+QtSsbgiWHml/6d084R0t1ZN5EOmb5+iYOVDtmUOdkvF2t1K+3Ga+uwfaAubiJhnwAfIOeErr1Xpsd8r5JMnkLPLUnxo9aD7NXO5wNiyymXAi4LxhYnGyYiyKCTFNG4JZWB1rg1hhr6rDIgv1AoGBAPdb8+cjbacpq9b2OREj7jlLCcrVE+Kw5F9ng1GFr+HWTKbLwgeOD3sw/R2flvVMn9CY+tCLft7F5Svn9mog0mgjcGS0JjbPH0WSj1OZ0iboX5iER7+XgLwNoG/2GewWlTs5P25Oy9zR1ZkgASp9k/tFVuyj72DnonZ7J7yY/+4FAoGBAKEXpgnvhy6Wf8dJx+zsDBEET0gqplOreOgZy94Fmv2GKTmJ2zqCv111Ujb2W9xP7h6faH6mNep8j5oIs78USlrqddEndJMuhMuSNoWIn1N6cUebI+bnCii6V7cB4v43RNsJ2tM8+wu+I0lXS1g26kpKkNDJlBbeAp3ICM2BiQvfAoGAGr3VLb6kEhJXxDZLW8yIdOWEhKFp7v5d4MzrmhxKXZqggLwU+eXYKP5gjZS2X7VBta+saZKKQZjagUmCbFaTSYdKa8By1X4s5O0/7Vy8xe+bockcg2pTGz++UUsJuKh+1fhZ4mliJbXR5wpg/ay2DVOascyIlNrFdJexRNJFLn0CgYB1jcwww4wo6l0+ZkXIkJMvAyUY/Ic2Iy63NWtBJq9fDt/QCqblggFEMwSkpfABohx3Ng37jgurHKAkS4oV0IlJQ08OP2Ln8YN/y4+R4Dzp47pyhfeaqJi178N3tUTHWMOLFQd3jV0/6501hOP0Q7+5rAjPtbFBHoxJn88SgR7RTwKBgDXKdNzE4Wc6yaishyRJRK6JYbGwa4ng03GPWF+QVc1u9fvzG8UuM06q1g4Pad5jbVodeUQxI8JvdzW02SwAZQagrD11k6tG3yefu9sRzurOQcjcmNldIKHVCHrwjOc9p1RztSE+Cv3/RjqdeM9NBlEbHtt2T6/ogT3df82LGH8x-----END RSA PRIVATE KEY-----
+    publicKey: ---- BEGIN SSH2 PUBLIC KEY ----AAAAB3NzaC1yc2EAAAABJQAAAQEAm6euFoDhEErtMzSCnwTU6eBcZr5hC9foLef+s39vkZU9WkK9VGIICxIh0KxKTc8fsoWnGw4NPzO9SHHrGd0WIW4dDt8cSoTWo7bqJ7faXHEUGnfaDwgAPoCqiYVBYzqdx5hPnBbPHDBB11noSVMUjY5FztIySq+pvKwKd0ru461JGxRavr15UAVw1U9ryYAsDL+gqkfKqv+xZ3DvX48yoKOdiudc5fTEfnuJQLW3uZrbz8zxPzRwdGhjy6zfYJXinbwga7LIsBpX1rlpsYxBuOvvcutZZ4p9vVMth3cRtcuS3dP95JqmlmGyD1yoBZpQRuWvu2zink5WTVHEK9eNWw==---- END SSH2 PUBLIC KEY ----
+
