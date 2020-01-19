@@ -1,0 +1,44 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: products
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3qwdL3v0NGlOvrtHO9qb
+          koKJa34Nz9u2AUrq8ymzkeTCqm5GDQZhZLJOSomb5sZDfe8V9wfCiMgAQzwGZ2M9
+          6+DvdFvI4PfSPkMplWF831TQzfUosaNkcdpSBt/eqKrqGNnNMT12QSsgEx2xqNmz
+          Wksps9Xe36X2/+Z1xi+XFFedOa8c/hq0loJhu2oDaR07F5uA07zCDY9xkOeM+wVa
+          09STy6XVJk7JOpZMzcAHu87s85NQ4y/bzL2hKUeQGURemBP3pjxryAxowdsAFhj/
+          6pbbpiQeGMaZOkk8FPWEmH/zLb+ohWxu17HBWGL4Tl/cfDZSc78SWiHkE8dx2qFx
+          bQIDAQAB
+          -----END PUBLIC KEY-----
+
+
+#  jpa:
+#    database: POSTGRESQL
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
+#      generate-ddl: true
+#    properties:
+#      hibernate:
+#        dialect=org:
+#          hibernate:
+#            dialect: PostgreSQL92Dialect
+#            non_contextual_creation: true
+#
+#  datasource:
+#    platform: postgres
+#    driverClassName: "org.postgresql.Driver"
+#    url: "jdbc:postgresql://localhost/userdb"
+#    password: "userdb_password"
+#    username: "userdb_user"
+
+
+
