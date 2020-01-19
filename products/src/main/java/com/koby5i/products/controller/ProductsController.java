@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductsController {
 
-	
 	@PreAuthorize("hasRole('ITEM_CREATE')")
 	@RequestMapping(value="/item", method= RequestMethod.POST)
 	public String createItem() {
