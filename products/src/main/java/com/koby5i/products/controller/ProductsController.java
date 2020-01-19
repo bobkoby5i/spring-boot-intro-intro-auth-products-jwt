@@ -14,7 +14,7 @@ public class ProductsController {
 	
 	@PreAuthorize("hasRole('ITEM_CREATE')")
 	@RequestMapping(value="/item", method= RequestMethod.POST)
-	public String createNote() {
+	public String createItem() {
 		
 		AccessTokenMapper accessTokenMapper = (AccessTokenMapper)
 				((OAuth2AuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails()).getDecodedDetails();
@@ -28,25 +28,25 @@ public class ProductsController {
 	
 	@PreAuthorize("hasRole('ITEM_EDIT')")
 	@RequestMapping(value="/item", method= RequestMethod.PUT)
-	public String updateNote() {
+	public String updateItem() {
 		return "Item has been updated successfully";
 	}
 	
 	@PreAuthorize("hasRole('ITEM_DELETE')")
 	@RequestMapping(value="/item", method= RequestMethod.DELETE)
-	public String deleteNote() {
+	public String deleteItem() {
 		return "Item has been deleted successfully";
 	}
 	
 	@PreAuthorize("hasRole('ITEM_VIEW_ALL')")
 	@RequestMapping(value="/item", method= RequestMethod.GET)
-	public String viewAllNotes() {
+	public String viewAllItem() {
 		return "Item ALL API response";
 	}
 	
 	@PreAuthorize("hasRole('ITEM_VIEW')")
 	@RequestMapping(value="/itemById", method= RequestMethod.GET)
-	public String viewNotesByID() {
+	public String viewItemByID() {
 		return "Item By ID response";
 	}
 	
