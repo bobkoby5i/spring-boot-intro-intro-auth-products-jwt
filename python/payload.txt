@@ -1,0 +1,20 @@
+{
+  "user_name": "bob@gmail.com",
+  "scope": [
+    "read",
+    "write"
+  ],
+  "name": "bob",
+  "id": "1",
+  "exp": 1581024634,
+  "userName": "bob@gmail.com",
+  "authorities": [
+    "ROLE_ITEM_VIEW",
+    "ROLE_ITEM_EDIT",
+    "ROLE_ITEM_CREATE",
+    "ROLE_ITEM_DELETE",
+    "ROLE_ITEM_VIEW_ALL"
+  ],
+  "jti": "26404bc2-c435-4cd1-b742-d1bb6052c362",
+  "client_id": "bobkoby5i_id"
+}
