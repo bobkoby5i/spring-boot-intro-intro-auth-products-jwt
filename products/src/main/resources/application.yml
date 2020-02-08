@@ -10,13 +10,13 @@ security:
     resource:
       jwt:
         key-value: -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3qwdL3v0NGlOvrtHO9qb
-          koKJa34Nz9u2AUrq8ymzkeTCqm5GDQZhZLJOSomb5sZDfe8V9wfCiMgAQzwGZ2M9
-          6+DvdFvI4PfSPkMplWF831TQzfUosaNkcdpSBt/eqKrqGNnNMT12QSsgEx2xqNmz
-          Wksps9Xe36X2/+Z1xi+XFFedOa8c/hq0loJhu2oDaR07F5uA07zCDY9xkOeM+wVa
-          09STy6XVJk7JOpZMzcAHu87s85NQ4y/bzL2hKUeQGURemBP3pjxryAxowdsAFhj/
-          6pbbpiQeGMaZOkk8FPWEmH/zLb+ohWxu17HBWGL4Tl/cfDZSc78SWiHkE8dx2qFx
-          bQIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5ihK0u+UFJhGs3M5DZ7P
+          y0rqZ55BnYh0oLOjT4JKH5U6gMeP4FfMxIg+DT2ydyeFX9FIjW/zbZmpSo9c4jFk
+          24u1S29LnSzbUxC/HHuWrSd6TEC2pgEsPdbSEwAlro0l+wIP9pnDCx7laLP/LNwb
+          H3UjVw20VP/PlXL0kQRUW5PfASBIZ7wkvFTh4VdYEfn6ciYoaX86DLV+4hIn/Vld
+          xUbbqlj0i5FoWSu/VHoi/81Y/HOqHebO1vUyCz2EmoWh1/qERKJ0Xigq4UKQZLJv
+          UBXBGlzfqU4rT9FxaQT7y9LfXPZDewXJKO+KKqIDwiQ+UuFctU2EL2UxVUAPtbdD
+          PQIDAQAB
           -----END PUBLIC KEY-----
 
 
