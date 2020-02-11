@@ -367,18 +367,21 @@ print("Signature valid:", hash == hashFromSignature)
 #
 #TEST EXCERCISE:
 #	 input: Sample output (message + hex-encoded signature + PEM-encoded RSA public key):
-# SHA3_512
+#  SHA3_512
+#  https://cryptobook.nakov.com/digital-signatures/exercises-rsa-sign-and-verify
 #
 data           = open("inp/test_p.txt").read()    #payload
+public_key_str = open("inp/test_k.txt").read() #pub_key
 public_key     = RSA.import_key(open("inp/test_k.txt").read()) #pub_key
 signature      = open("inp/test_s.txt").read()    #signature
 
 data
+public_key_str
 public_key
 signature
 
 
-#convert data to biinary 
+#convert data to binary 
 data = data.encode('utf-8')
 data 
 
@@ -390,15 +393,14 @@ if missing_padding:
 
 signature = base64.urlsafe_b64decode(signature)
 print("Signature:", binascii.hexlify(signature))	
-print("Signature:", binascii.hexlify(signature))
 
 #calcualte hash from payload
 from Crypto.Hash import SHA3_512
 hasher = SHA3_512.new(data)
 hasher.hexdigest()
 
+# why this method gives me  an error ? 
 signer1 = PKCS115_SigScheme(public_key)
-#signer = PKCS1_v1_5.new(public_key)
 try:
     signer1.verify(hasher, signature)
     print("Signature is valid. OK")
@@ -406,8 +408,7 @@ except:
     print("Signature is invalid. ERROR")
 
 
-
-#signer = PKCS115_SigScheme(public_key)
+# this method works 
 signer2 = PKCS1_v1_5.new(public_key)
 try:
     signer2.verify(hasher, signature)

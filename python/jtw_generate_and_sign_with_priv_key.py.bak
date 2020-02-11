@@ -27,6 +27,10 @@ from Crypto import Random
 from base64 import b64encode, b64decode
 import rsa
 
+import binascii
+
+
+
 
 ####################################################################################
 #
@@ -383,26 +387,30 @@ missing_padding = len(signature) % 4
 if missing_padding:
 	signature += '='* (4 - missing_padding)
 
+
 signature = base64.urlsafe_b64decode(signature)
 print("Signature:", binascii.hexlify(signature))	
+print("Signature:", binascii.hexlify(signature))
 
 #calcualte hash from payload
 from Crypto.Hash import SHA3_512
 hasher = SHA3_512.new(data)
 hasher.hexdigest()
 
-#signer = PKCS115_SigScheme(public_key)
-signer = PKCS1_v1_5.new(public_key)
+signer1 = PKCS115_SigScheme(public_key)
+#signer = PKCS1_v1_5.new(public_key)
 try:
-    signer.verify(hasher, signature)
+    signer1.verify(hasher, signature)
     print("Signature is valid. OK")
 except:
     print("Signature is invalid. ERROR")
 
-# tu nie dziala. 
-signer = PKCS115_SigScheme(public_key)
+
+
+#signer = PKCS115_SigScheme(public_key)
+signer2 = PKCS1_v1_5.new(public_key)
 try:
-    signer.verify(hasher, signature)
+    signer2.verify(hasher, signature)
     print("Signature is valid. OK")
 except:
     print("Signature is invalid. ERROR")
