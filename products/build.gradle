@@ -12,6 +12,16 @@ repositories {
 	mavenCentral()
 }
 
+task copyJarToDockerPackage(type: Copy, dependsOn: bootJar){
+	from "./build/libs/" // source folder with jar
+	into 'docker/' // your folder with Dockerfile
+	include("products-${version}.jar") // name of generated jar
+	rename ("products-${version}.jar", "prod-service.jar") // change name to same from Dockerfile
+}
+
+build.dependsOn copyJarToDockerPackage // Before task build do this first
+
+
 ext {
 	set('springCloudVersion', "Greenwich.SR4")
 }

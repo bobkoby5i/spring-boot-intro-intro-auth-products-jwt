@@ -40,13 +40,19 @@ public class ProductsController {
 	@PreAuthorize("hasRole('ITEM_VIEW_ALL')")
 	@RequestMapping(value="/item", method= RequestMethod.GET)
 	public String viewAllItem() {
-		return "Item ALL API response";
+		AccessTokenMapper accessTokenMapper = (AccessTokenMapper)
+				((OAuth2AuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails()).getDecodedDetails();
+		return "Item VIEW ALL - success. accessToken (ID:"+accessTokenMapper.getId()+", Name:"+accessTokenMapper.getName()+", Email ID:"+accessTokenMapper.getUserName() +").";
+
 	}
 	
 	@PreAuthorize("hasRole('ITEM_VIEW')")
 	@RequestMapping(value="/itemById", method= RequestMethod.GET)
 	public String viewItemByID() {
-		return "Item By ID response";
+		AccessTokenMapper accessTokenMapper = (AccessTokenMapper)
+				((OAuth2AuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails()).getDecodedDetails();
+		return "Item VIEW ONE - success. accessToken (ID:"+accessTokenMapper.getId()+", Name:"+accessTokenMapper.getName()+", Email ID:"+accessTokenMapper.getUserName() +").";
+
 	}
 	
 	

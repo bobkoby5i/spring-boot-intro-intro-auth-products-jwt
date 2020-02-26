@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.koby5i'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -16,12 +16,22 @@ ext {
 	set('springCloudVersion', "Greenwich.SR4")
 }
 
+task copyJarToDockerPackage(type: Copy, dependsOn: bootJar){
+	from "./build/libs/" // source folder with jar
+	into 'docker/' // your folder with Dockerfile
+	include("authsvc-${version}.jar") // name of generated jar
+	rename ("authsvc-${version}.jar", "auth-service.jar") // change name to same from Dockerfile
+}
+
+build.dependsOn copyJarToDockerPackage // Before task build do this first
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
 	runtimeOnly 'org.postgresql:postgresql'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.2'
 }
 
 dependencyManagement {

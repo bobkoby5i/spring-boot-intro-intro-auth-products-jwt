@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8092
 
 spring:
   application:
@@ -10,13 +10,13 @@ security:
     resource:
       jwt:
         key-value: -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5ihK0u+UFJhGs3M5DZ7P
-          y0rqZ55BnYh0oLOjT4JKH5U6gMeP4FfMxIg+DT2ydyeFX9FIjW/zbZmpSo9c4jFk
-          24u1S29LnSzbUxC/HHuWrSd6TEC2pgEsPdbSEwAlro0l+wIP9pnDCx7laLP/LNwb
-          H3UjVw20VP/PlXL0kQRUW5PfASBIZ7wkvFTh4VdYEfn6ciYoaX86DLV+4hIn/Vld
-          xUbbqlj0i5FoWSu/VHoi/81Y/HOqHebO1vUyCz2EmoWh1/qERKJ0Xigq4UKQZLJv
-          UBXBGlzfqU4rT9FxaQT7y9LfXPZDewXJKO+KKqIDwiQ+UuFctU2EL2UxVUAPtbdD
-          PQIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkfMTK7Syts4et020y5iN
+          eaE4ONv+eaK+MBNQy7KrFldEReN/VyxRK5/NV5qnDg/X5ti+DDgKz+RPRREqqqqa
+          at2swvJY7WMvswdOli+P/0fHzorftOc+4aX1erLhant+BHQO4L/hnWORcG/5RoI2
+          s7Hlto9U8A0O2PBhPvw0j0lgUOQp+0ou3avjrXBRRhhVtmo2xee1ZC0ELIdcMl6e
+          45ktHGAIbPxr/z7A+lHX3H7dRGEcl5oWCEfLEvKChAYGxGkXuK1uWtYajbniLhmh
+          83vDJcHwW92JOLdhADj03bt4tHqhchd/J2fZCqKPAC9KgRME3WcMUumvQbF9u7YH
+          lwIDAQAB
           -----END PUBLIC KEY-----
 
 
