@@ -1,0 +1,53 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: intro_mongodb_rsa
+    volumes:
+        - mongodata:/data/db
+    ports:
+      - 27017:27017
+      
+  auth-svc-posgresql:
+    build: .
+    container_name: auth-svc-posgresql
+    image: intro-auth-svc-postgresql:latest
+    expose:
+      - 8091
+    ports:
+      - 8091:8091
+    environment:
+      ACTIVE_PROFILE: heroku
+      JASYPT_ENCRYPTOR_PASSWORD: ${JASYPT_ENCRYPTOR_PASSWORD}
+      #CONFIGURATION_SERVER_URI: http://configuration:8888
+
+  auth-svc-mongo:
+    build: .
+    container_name: auth-svc-mongo
+    image: intro-auth-svc-mongo:latest
+    expose:
+      - 8091
+    ports:
+      - 8091:8091
+    environment:
+      ACTIVE_PROFILE: dev1
+      JASYPT_ENCRYPTOR_PASSWORD: ${JASYPT_ENCRYPTOR_PASSWORD}
+      #CONFIGURATION_SERVER_URI: http://configuration:8888
+
+
+  products-svc:
+    build: .
+    container_name: products-svc
+    image: intro-products-svc:latest
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
+    environment:
+      ACTIVE_PROFILE: dev1
+      JASYPT_ENCRYPTOR_PASSWORD: ${JASYPT_ENCRYPTOR_PASSWORD}
+      #CONFIGURATION_SERVER_URI: http://configuration:8888
+
+volumes:
+  mongodata:
+   
