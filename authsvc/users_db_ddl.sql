@@ -57,11 +57,12 @@ INSERT INTO ROLES (ID, ROLE_NAME) VALUES (1, 'ADMIN');
 INSERT INTO ROLES (ID, ROLE_NAME) VALUES (2, 'USER');
 INSERT INTO ROLES (ID, ROLE_NAME) VALUES (3, 'GUEST');
 
-INSERT INTO USERS (ID, NAME, EMAIL_ID, PASSWORD) VALUES (1, 'bob-heroku',   'bob@gmail.com',  '$2a$10$jbIi/RIYNm5xAW9M7IaE5.WPw6BZgD8wcpkZUg0jm8RHPtdfDcMgm');
-INSERT INTO USERS (ID, NAME, EMAIL_ID, PASSWORD) VALUES (2, 'tom-heroku',   'tom@gmail.com',  '$2a$10$jbIi/RIYNm5xAW9M7IaE5.WPw6BZgD8wcpkZUg0jm8RHPtdfDcMgm');
-INSERT INTO USERS (ID, NAME, EMAIL_ID, PASSWORD) VALUES (3, 'alice-heroku', 'alice@gmail.com','$2a$10$jbIi/RIYNm5xAW9M7IaE5.WPw6BZgD8wcpkZUg0jm8RHPtdfDcMgm');
+--I do not remember :) this password use bcrypt.
+INSERT INTO USERS (ID, NAME, EMAIL_ID, PASSWORD) VALUES (1, 'bob-local',   'bob@gmail.com',  '$2a$10$jbIi/RIYNm5xAW9M7IaE5.WPw6BZgD8wcpkZUg0jm8RHPtdfDcMgm');
+INSERT INTO USERS (ID, NAME, EMAIL_ID, PASSWORD) VALUES (2, 'tom-local',   'tom@gmail.com',  '$2a$10$jbIi/RIYNm5xAW9M7IaE5.WPw6BZgD8wcpkZUg0jm8RHPtdfDcMgm');
+INSERT INTO USERS (ID, NAME, EMAIL_ID, PASSWORD) VALUES (3, 'alice-local', 'alice@gmail.com','$2a$10$jbIi/RIYNm5xAW9M7IaE5.WPw6BZgD8wcpkZUg0jm8RHPtdfDcMgm');
 
-
+password = 'password'
 update USERS
 set password='$2a$09$j3zqmGi330bI9/kQ24Yu2.yDTGCUmCAgbEydih9wo2R654IAfe1aO'
 

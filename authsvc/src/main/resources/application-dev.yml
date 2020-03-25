@@ -1,0 +1,61 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: authsvc
+
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "jdbc:postgresql://localhost/userdb"
+    password: "userdb_password"
+    username: "userdb_user"
+
+#jasypt:
+#  encryptor:
+#    password: ${JASYPT_ENCRYPTOR_PASSWORD}
+
+
+config:
+  oauth2:
+    clientid: bobkoby5i_id
+    clientSecret: 1234
+    accesstoken_validity_seconds: 3600
+    refreshtoken_validity_seconds: 18000
+    privateKey: -----BEGIN RSA PRIVATE KEY-----
+      MIIEpAIBAAKCAQEA3qwdL3v0NGlOvrtHO9qbkoKJa34Nz9u2AUrq8ymzkeTCqm5G
+      DQZhZLJOSomb5sZDfe8V9wfCiMgAQzwGZ2M96+DvdFvI4PfSPkMplWF831TQzfUo
+      saNkcdpSBt/eqKrqGNnNMT12QSsgEx2xqNmzWksps9Xe36X2/+Z1xi+XFFedOa8c
+      /hq0loJhu2oDaR07F5uA07zCDY9xkOeM+wVa09STy6XVJk7JOpZMzcAHu87s85NQ
+      4y/bzL2hKUeQGURemBP3pjxryAxowdsAFhj/6pbbpiQeGMaZOkk8FPWEmH/zLb+o
+      hWxu17HBWGL4Tl/cfDZSc78SWiHkE8dx2qFxbQIDAQABAoIBAQDDKVbrJ1kCFspN
+      oRbt/swbvQ10iSbR51++AkuqlAIu/LEhb0U2ZUE3YI/+BF4ABgVhewtlWAfImoKg
+      axuxwemjs6Ir+cY2Zv5+U58+rhMkKtJXsWfZSbvfjdoW7F/atPI4layiW5wpwgJ6
+      vqvXsfbgTMBgPjL5Eh1KbFMNQOjJid4BcicXxR+XD2lQtLv0BKmaY6DA4uvsWWNp
+      aPeJVwtYodpTmZHuinU5gkXb4yGJyZy8ekmX8PbVIZHIMd5DvaY4SwaHE3LFkiD3
+      DzapLpCyhatTxyulpmmUpsub8CumhWkuSf7FAPMF4IZLetGv7TDwEeZfZP5+5ksN
+      G05tmKqBAoGBAPjkxUDqqrTD4JyxN6sysbH3JnX0CASq8UmMH5t7y34x8cFx52nv
+      CjO+Dcpp9TVHTcxJoruvbXDOngc0KACfkwet++g1xsmOpd4pBbLggSD6PWq6HSC3
+      Fi2LH3ofB5y/jdMyGB7YxJdEAmTdJq2+Ju5ipBW917SZ/w5GANzJBx7jAoGBAOUH
+      r1kbp6izMGLq+NAdmgozXdE8ZD71EC5ICq89jnwnCGNwwmMxb8fQJT/wFrTgIa/T
+      VtAqOm/QhPjl2Mr+WJYjooxK1ckwrdJLCLnGnOPIdYvn85iiyQaW/NTqrmgaVOO1
+      1B6ATXUjyPpy9WwsZP7MZux7YSv1mLx5UTouYU9vAoGBAM+9uvqVJAifGaIPtQRa
+      2sBNJrf7CJpEyAJ4R4VyjYX2T/ADj4D2+Q/5CO+zAu0GZ+QkbgSzxugKPRKMMPtc
+      Nc+KI6FNCXAAdWd52/zSsFUDKTIkx90flA5NeedncOYfaFQoEsPkcCpFpK3lfLw1
+      467DfGt9OkbO5nlWaq/dxui7AoGAKMTPb9s+YwdSq6kMFW/PhdVS8/X+Gj7hXHuy
+      ezNH88227oyZ7bJVJYpltxXz1Mq49GV4ZKG/uTuzD+NKTggsmL1LKBICMEgcCP0W
+      VouGTf3W/sqRUDBZ/HRQGU6VMS7OwaISWkOYhiuSkRJ5oYHdkIWuJJZp27tiLtqh
+      nOu4or0CgYAhrMggMRbKKiZMkt4JgYQ3ZtRgkHY56V2KVKtYg44+GxwOFcsL1rgh
+      TCYG0dOc87vEsa0Zj9b0FRWkr3P+to3h0i4hHKWKhAxGqeJaRHbkbWjKg+ZpYGm9
+      psNOUm74LvJUZMsGG9fcPJI85MrIwWXzBFJRrLDIN+VlB9YmtYjJKw==
+      -----END RSA PRIVATE KEY-----
+    publicKey: -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkfMTK7Syts4et020y5iN
+      eaE4ONv+eaK+MBNQy7KrFldEReN/VyxRK5/NV5qnDg/X5ti+DDgKz+RPRREqqqqa
+      at2swvJY7WMvswdOli+P/0fHzorftOc+4aX1erLhant+BHQO4L/hnWORcG/5RoI2
+      s7Hlto9U8A0O2PBhPvw0j0lgUOQp+0ou3avjrXBRRhhVtmo2xee1ZC0ELIdcMl6e
+      45ktHGAIbPxr/z7A+lHX3H7dRGEcl5oWCEfLEvKChAYGxGkXuK1uWtYajbniLhmh
+      83vDJcHwW92JOLdhADj03bt4tHqhchd/J2fZCqKPAC9KgRME3WcMUumvQbF9u7YH
+      lwIDAQAB
+      -----END PUBLIC KEY-----
+
