@@ -19,35 +19,35 @@ spring:
 config:
   oauth2:
     clientid: bobkoby5i_id
-    clientSecret: 1234
+    clientSecret: bobkoby5i_secret
     accesstoken_validity_seconds: 3600
     refreshtoken_validity_seconds: 18000
     privateKey: -----BEGIN RSA PRIVATE KEY-----
-      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
+      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
       -----END RSA PRIVATE KEY-----
     publicKey: -----BEGIN PUBLIC KEY-----
       MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkfMTK7Syts4et020y5iN
@@ -56,6 +56,7 @@ config:
       s7Hlto9U8A0O2PBhPvw0j0lgUOQp+0ou3avjrXBRRhhVtmo2xee1ZC0ELIdcMl6e
       45ktHGAIbPxr/z7A+lHX3H7dRGEcl5oWCEfLEvKChAYGxGkXuK1uWtYajbniLhmh
       83vDJcHwW92JOLdhADj03bt4tHqhchd/J2fZCqKPAC9KgRME3WcMUumvQbF9u7YH
-      lwIDAQAB
-      -----END PUBLIC KEY-----
+      lwIDAQAB-----END PUBLIC KEY-----
+
+
 
