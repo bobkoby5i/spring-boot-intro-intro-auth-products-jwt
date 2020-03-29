@@ -1,0 +1,21 @@
+PKCS1 -> PKCS8
+http://travistidwell.com/jsencrypt/demo/
+openssl pkcs8 -topk8 -inform PEM -outform PEM -in key1_private_PKCS1.pem -out key1_private_PKCS8.pem -nocrypt
+
+pkcs1 can be imported as into putty
+pkcs8 can not be imported into puty 
+
+
+
+PKCS1
+
+-----BEGIN RSA PRIVATE KEY-----
+[...]
+-----END RSA PRIVATE KEY-----
+
+PKCS8
+
+-----BEGIN PRIVATE KEY-----
+[...]
+-----END PRIVATE KEY-----
+

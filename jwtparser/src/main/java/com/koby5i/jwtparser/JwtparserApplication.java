@@ -25,12 +25,12 @@ public class JwtparserApplication {
 	public static void main(String[] args) throws Exception {
 		//SpringApplication.run(JwtparserApplication.class, args);
 
-		String PUBLIC_KEY_PEM =  "-----BEGIN PUBLIC KEY-----\n"
+		String PUBLIC_KEY_PEM = "-----BEGIN PUBLIC KEY-----\n"
 				+ "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ\n"
-		        + "EAk8/XJRIbEW/DW30YxcnjNPFgZjhtsjcatetMP9xxyXDBPQA+jh9xAM4bf1v3QJOJalNuNpHat9k3e9Aa1M+qB1zq8blAZtsSF8jM7okuMHyeU6YXw7rY+d4t1Xigbt9LTaPfb5qCZvMShfjgeSb2DgZRbRlKfh9cVUZ8e7XUTm6UDlEvBI9mQiiwolPVyPCZDFNI8pb35NcXI4Kzh4S15BnAGpyKpiQJEmXX4wifYak8weJVoFuAu9fjjtdeacEqHFafyVZvEdKHTD+ofY9z6/JELdFRcI2N3a8rRa+JM2+CvrAIuOzLHGBZ1WwPKsHe6zhsxC1oODRvzVYOzOtvbQIDAQAB\n"
+				+ "EAk8/XJRIbEW/DW30YxcnjNPFgZjhtsjcatetMP9xxyXDBPQA+jh9xAM4bf1v3QJOJalNuNpHat9k3e9Aa1M+qB1zq8blAZtsSF8jM7okuMHyeU6YXw7rY+d4t1Xigbt9LTaPfb5qCZvMShfjgeSb2DgZRbRlKfh9cVUZ8e7XUTm6UDlEvBI9mQiiwolPVyPCZDFNI8pb35NcXI4Kzh4S15BnAGpyKpiQJEmXX4wifYak8weJVoFuAu9fjjtdeacEqHFafyVZvEdKHTD+ofY9z6/JELdFRcI2N3a8rRa+JM2+CvrAIuOzLHGBZ1WwPKsHe6zhsxC1oODRvzVYOzOtvbQIDAQAB\n"
 				+ "-----END PUBLIC KEY-----";
 
-		String PRIVATE_KEY =  "-----BEGIN PUBLIC KEY-----\n";
+		String PRIVATE_KEY = "-----BEGIN PUBLIC KEY-----\n";
 
 		String realmPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk8/XJRIbEW/DW30YxcnjNPFgZjhtsjcatetMP9xxyXDBPQA+jh9xAM4bf1v3QJOJalNuNpHat9k3e9Aa1M+qB1zq8blAZtsSF8jM7okuMHyeU6YXw7rY+d4t1Xigbt9LTaPfb5qCZvMShfjgeSb2DgZRbRlKfh9cVUZ8e7XUTm6UDlEvBI9mQiiwolPVyPCZDFNI8pb35NcXI4Kzh4S15BnAGpyKpiQJEmXX4wifYak8weJVoFuAu9fjjtdeacEqHFafyVZvEdKHTD+ofY9z6/JELdFRcI2N3a8rRa+JM2+CvrAIuOzLHGBZ1WwPKsHe6zhsxC1oODRvzVYOzOtvbQIDAQAB";
 		String accessTokenString = "eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJmNDczMzVkNS05ZGEwLTRhZGEtYTk5Zi00ODA1YTU5ZGRiYTQiLCJleHAiOjE0NTczNjY5MDgsIm5iZiI6MCwiaWF0IjoxNDU3MzY2NjA4LCJpc3MiOiJodHRwOi8vbG9naW4uYWNtZS5sb2NhbDo4MDgxL2F1dGgvcmVhbG1zL2FjbWUiLCJhdWQiOiJ2YWFkaW4tYXBwIiwic3ViIjoiNjU5OTJmNzktNjM4Mi00ZDk4LTlhZjItOTBjZjVmNzZmZTkxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoidmFhZGluLWFwcCIsInNlc3Npb25fc3RhdGUiOiIxMmVlOGUwZi1kMzgwLTQxZmEtODMxMS1jMmI0MjM2OGJmZjkiLCJjbGllbnRfc2Vzc2lvbiI6ImY3NTAzYmJkLWFkZTYtNDQ1Ny1iZTIxLTQ3NDRkMWJmMTc4NCIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0Ojc3NzciXSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjbWUtcGV0Y2xpbmljIjp7InJvbGVzIjpbImFkbWluIiwidXNlciJdfSwidmFhZGluLWFwcCI6eyJyb2xlcyI6WyJ1c2VyIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1wcm9maWxlIl19fSwibmFtZSI6IlRoZW8gVGVzdGVyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidGhlbyIsImdpdmVuX25hbWUiOiJUaGVvIiwiZmFtaWx5X25hbWUiOiJUZXN0ZXIiLCJlbWFpbCI6InRvbSt0aGVvQGxvY2FsaG9zdCJ9.frMCkpDKG4VixXRZhh7KZqjDCxPbZq_6Wrl5X6RhjlGs9hL22Z6pcsVSlIzpincdwbLCpLYpLs3T2LRrlZ-YNUGOnKObnrmlVbMNi8UmGJiAj0bAsIPYWEfA-Ww3wuTitfjo0fgbAb8F_sLsPR9qjE6BcDPVXR2S_SJVWJ1CKb5kwiwKTTzAMUo1H22Ce64hoeSuEdQFM1x1n-M8kTkLPUPnL_lj-mOIpqbLZyrls3_TEL3up0-XYyF2Gt9fDQKXTp_XPLizGUiiY90TQC4rhNye3JPLMB6RZnQFmyJq5I5Cq0ybdMarloeLjvYjc3RyIgZgtFWjk5aNYDaietBJSA";
@@ -76,7 +76,6 @@ public class JwtparserApplication {
 		System.out.println("Subject: " + claims.getSubject());
 		System.out.println("Issuer: " + claims.getIssuer());
 		System.out.println("Expiration: " + claims.getExpiration());
-
 
 
 	}
@@ -127,29 +126,26 @@ public class JwtparserApplication {
 	}
 
 
-
-	public static PrivateKey convertKeySpecToPrivateKey(PKCS8EncodedKeySpec keySpec){
+	public static PrivateKey convertKeySpecToPrivateKey(PKCS8EncodedKeySpec keySpec) {
 		KeyFactory kf;
 		PrivateKey privKey;
 		try {
 			kf = KeyFactory.getInstance("RSA");
 			privKey = kf.generatePrivate(keySpec);
 			return privKey;
-		}
-		catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	public static PublicKey convertKeySpecToPublicKey(PKCS8EncodedKeySpec keySpec){
+	public static PublicKey convertKeySpecToPublicKey(PKCS8EncodedKeySpec keySpec) {
 		KeyFactory kf;
 		PublicKey pubKey;
 		try {
 			kf = KeyFactory.getInstance("RSA");
 			pubKey = kf.generatePublic(keySpec);
 			return pubKey;
-		}
-		catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -166,7 +162,7 @@ public class JwtparserApplication {
 		System.out.printf("pkcs8Pem:%s", pkcs8Pem);
 		pkcs8Pem = pkcs8Pem.replace("-----BEGIN PRIVATE KEY-----", "");
 		pkcs8Pem = pkcs8Pem.replace("-----END PRIVATE KEY-----", "");
-		pkcs8Pem = pkcs8Pem.replaceAll("\\s+","");
+		pkcs8Pem = pkcs8Pem.replaceAll("\\s+", "");
 
 		// Base64 decode the result
 
@@ -192,7 +188,7 @@ public class JwtparserApplication {
 		System.out.printf("pkcs8Pem:%s", pkcs8Pem);
 		pkcs8Pem = pkcs8Pem.replace("-----BEGIN PUBLIC KEY-----", "");
 		pkcs8Pem = pkcs8Pem.replace("-----END PUBLIC KEY-----", "");
-		pkcs8Pem = pkcs8Pem.replaceAll("\\s+","");
+		pkcs8Pem = pkcs8Pem.replaceAll("\\s+", "");
 
 		// Base64 decode the result
 
@@ -205,8 +201,9 @@ public class JwtparserApplication {
 		System.out.println(publicKey);
 		return publicKey;
 	}
+}
 
-	//validate token robert kobylinski 03/27
+	//validate token robert  03/27
 //    private static Claims validateTokenNew(String token, PublicKey publicKey) {
 //        Claims claims;
 //        try {
@@ -299,5 +296,6 @@ public class JwtparserApplication {
             System.out.printf("JWT jti: %s %n", jti); // TODO REMOVE when done
             System.out.printf("JWT private key: %s %n", privateKey2); // TODO REMOVE when done
             System.out.printf("JWT seconds: %s %n", accesstoken_validity_seconds); // TODO REMOVE when done
-*/
+
 }
+*/
