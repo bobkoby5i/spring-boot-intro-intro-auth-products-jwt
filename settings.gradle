@@ -2,4 +2,6 @@ rootProject.name = 'auth-prod-jwt'
 
 include 'authsvc'
 include 'products'
+include 'auth-svc-mongo'
+
 
