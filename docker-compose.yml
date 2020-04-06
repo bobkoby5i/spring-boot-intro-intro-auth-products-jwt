@@ -48,6 +48,20 @@ services:
       JASYPT_ENCRYPTOR_PASSWORD: ${JASYPT_ENCRYPTOR_PASSWORD}
       #CONFIGURATION_SERVER_URI: http://configuration:8888
 
+  
+  postgres:
+    image: postgres:latest
+    container_name: intro_postgres
+    ports:            
+      - 5432:5432     
+    environment:
+      - POSTGRES_DB=userdb
+      - POSTGRES_USER=userdb_user
+      - POSTGRES_PASSWORD=userdb_password
+      - PGDATA=/var/lib/postgresql/db
+    volumes:
+      - postgres:/data/postgresql/db
+      
 volumes:
-  mongodata:
-   
+  - postgres:
+  - mongodata:
