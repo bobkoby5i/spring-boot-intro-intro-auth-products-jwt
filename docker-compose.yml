@@ -63,5 +63,5 @@ services:
       - postgres:/data/postgresql/db
       
 volumes:
-  - postgres:
-  - mongodata:
+  postgres:
+  mongodata:
