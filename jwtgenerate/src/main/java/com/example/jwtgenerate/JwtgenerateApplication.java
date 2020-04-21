@@ -2,6 +2,7 @@ package com.example.jwtgenerate;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -49,45 +50,51 @@ public class JwtgenerateApplication {
 			"psNOUm74LvJUZMsGG9fcPJI85MrIwWXzBFJRrLDIN+VlB9YmtYjJKw==\n" +
 			"-----END RSA PRIVATE KEY-----";
 
-	private final static String PRIVATE_KEY_PEM_PCS8 =
-			"-----BEGIN PRIVATE KEY-----\n" +
-			"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDerB0ve/Q0aU6+\n" +
-			"u0c72puSgolrfg3P27YBSurzKbOR5MKqbkYNBmFksk5KiZvmxkN97xX3B8KIyABD\n" +
-			"PAZnYz3r4O90W8jg99I+QymVYXzfVNDN9Sixo2Rx2lIG396oquoY2c0xPXZBKyAT\n" +
-			"HbGo2bNaSymz1d7fpfb/5nXGL5cUV505rxz+GrSWgmG7agNpHTsXm4DTvMINj3GQ\n" +
-			"54z7BVrT1JPLpdUmTsk6lkzNwAe7zuzzk1DjL9vMvaEpR5AZRF6YE/emPGvIDGjB\n" +
-			"2wAWGP/qltumJB4Yxpk6STwU9YSYf/Mtv6iFbG7XscFYYvhOX9x8NlJzvxJaIeQT\n" +
-			"x3HaoXFtAgMBAAECggEBAMMpVusnWQIWyk2hFu3+zBu9DXSJJtHnX74CS6qUAi78\n" +
-			"sSFvRTZlQTdgj/4EXgAGBWF7C2VYB8iagqBrG7HB6aOzoiv5xjZm/n5Tnz6uEyQq\n" +
-			"0lexZ9lJu9+N2hbsX9q08jiVrKJbnCnCAnq+q9ex9uBMwGA+MvkSHUpsUw1A6MmJ\n" +
-			"3gFyJxfFH5cPaVC0u/QEqZpjoMDi6+xZY2lo94lXC1ih2lOZke6KdTmCRdvjIYnJ\n" +
-			"nLx6SZfw9tUhkcgx3kO9pjhLBocTcsWSIPcPNqkukLKFq1PHK6WmaZSmy5vwK6aF\n" +
-			"aS5J/sUA8wXghkt60a/tMPAR5l9k/n7mSw0bTm2YqoECgYEA+OTFQOqqtMPgnLE3\n" +
-			"qzKxsfcmdfQIBKrxSYwfm3vLfjHxwXHnae8KM74Nymn1NUdNzEmiu69tcM6eBzQo\n" +
-			"AJ+TB6376DXGyY6l3ikFsuCBIPo9arodILcWLYsfeh8HnL+N0zIYHtjEl0QCZN0m\n" +
-			"rb4m7mKkFb3XtJn/DkYA3MkHHuMCgYEA5QevWRunqLMwYur40B2aCjNd0TxkPvUQ\n" +
-			"LkgKrz2OfCcIY3DCYzFvx9AlP/AWtOAhr9NW0Co6b9CE+OXYyv5YliOijErVyTCt\n" +
-			"0ksIucac48h1i+fzmKLJBpb81OquaBpU47XUHoBNdSPI+nL1bCxk/sxm7HthK/WY\n" +
-			"vHlROi5hT28CgYEAz726+pUkCJ8Zog+1BFrawE0mt/sImkTIAnhHhXKNhfZP8AOP\n" +
-			"gPb5D/kI77MC7QZn5CRuBLPG6Ao9Eoww+1w1z4ojoU0JcAB1Z3nb/NKwVQMpMiTH\n" +
-			"3R+UDk1552dw5h9oVCgSw+RwKkWkreV8vDXjrsN8a306Rs7meVZqr93G6LsCgYAo\n" +
-			"xM9v2z5jB1KrqQwVb8+F1VLz9f4aPuFce7J7M0fzzbbujJntslUlimW3FfPUyrj0\n" +
-			"ZXhkob+5O7MP40pOCCyYvUsoEgIwSBwI/RZWi4ZN/db+ypFQMFn8dFAZTpUxLs7B\n" +
-			"ohJaQ5iGK5KREnmhgd2Qha4klmnbu2Iu2qGc67iivQKBgCGsyCAxFsoqJkyS3gmB\n" +
-			"hDdm1GCQdjnpXYpUq1iDjj4bHA4VywvWuCFMJgbR05zzu8SxrRmP1vQVFaSvc/62\n" +
-			"jeHSLiEcpYqEDEap4lpEduRtaMqD5mlgab2mw05Sbvgu8lRkywYb19w8kjzkysjB\n" +
-			"ZfMEUlGssMg35WUH1ia1iMkr\n" +
-			"-----END PRIVATE KEY-----";
+	@Value("${jwt.privateKeyPEM}")
+	private static String PRIVATE_KEY_PEM_PCS8;
 
-	private final static String PUBLIC_KEY_PEM =  "-----BEGIN PUBLIC KEY-----\n"
-			+ "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3qwdL3v0NGlOvrtHO9qb\n"
-			+ "koKJa34Nz9u2AUrq8ymzkeTCqm5GDQZhZLJOSomb5sZDfe8V9wfCiMgAQzwGZ2M9\n"
-			+ "6+DvdFvI4PfSPkMplWF831TQzfUosaNkcdpSBt/eqKrqGNnNMT12QSsgEx2xqNmz\n"
-			+ "Wksps9Xe36X2/+Z1xi+XFFedOa8c/hq0loJhu2oDaR07F5uA07zCDY9xkOeM+wVa\n"
-			+ "09STy6XVJk7JOpZMzcAHu87s85NQ4y/bzL2hKUeQGURemBP3pjxryAxowdsAFhj/\n"
-			+ "6pbbpiQeGMaZOkk8FPWEmH/zLb+ohWxu17HBWGL4Tl/cfDZSc78SWiHkE8dx2qFx\n"
-			+"bQIDAQAB\n"
-			+ "-----END PUBLIC KEY-----";
+//	private final static String PRIVATE_KEY_PEM_PCS8 =
+//			"-----BEGIN PRIVATE KEY-----\n" +
+//			"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDerB0ve/Q0aU6+\n" +
+//			"u0c72puSgolrfg3P27YBSurzKbOR5MKqbkYNBmFksk5KiZvmxkN97xX3B8KIyABD\n" +
+//			"PAZnYz3r4O90W8jg99I+QymVYXzfVNDN9Sixo2Rx2lIG396oquoY2c0xPXZBKyAT\n" +
+//			"HbGo2bNaSymz1d7fpfb/5nXGL5cUV505rxz+GrSWgmG7agNpHTsXm4DTvMINj3GQ\n" +
+//			"54z7BVrT1JPLpdUmTsk6lkzNwAe7zuzzk1DjL9vMvaEpR5AZRF6YE/emPGvIDGjB\n" +
+//			"2wAWGP/qltumJB4Yxpk6STwU9YSYf/Mtv6iFbG7XscFYYvhOX9x8NlJzvxJaIeQT\n" +
+//			"x3HaoXFtAgMBAAECggEBAMMpVusnWQIWyk2hFu3+zBu9DXSJJtHnX74CS6qUAi78\n" +
+//			"sSFvRTZlQTdgj/4EXgAGBWF7C2VYB8iagqBrG7HB6aOzoiv5xjZm/n5Tnz6uEyQq\n" +
+//			"0lexZ9lJu9+N2hbsX9q08jiVrKJbnCnCAnq+q9ex9uBMwGA+MvkSHUpsUw1A6MmJ\n" +
+//			"3gFyJxfFH5cPaVC0u/QEqZpjoMDi6+xZY2lo94lXC1ih2lOZke6KdTmCRdvjIYnJ\n" +
+//			"nLx6SZfw9tUhkcgx3kO9pjhLBocTcsWSIPcPNqkukLKFq1PHK6WmaZSmy5vwK6aF\n" +
+//			"aS5J/sUA8wXghkt60a/tMPAR5l9k/n7mSw0bTm2YqoECgYEA+OTFQOqqtMPgnLE3\n" +
+//			"qzKxsfcmdfQIBKrxSYwfm3vLfjHxwXHnae8KM74Nymn1NUdNzEmiu69tcM6eBzQo\n" +
+//			"AJ+TB6376DXGyY6l3ikFsuCBIPo9arodILcWLYsfeh8HnL+N0zIYHtjEl0QCZN0m\n" +
+//			"rb4m7mKkFb3XtJn/DkYA3MkHHuMCgYEA5QevWRunqLMwYur40B2aCjNd0TxkPvUQ\n" +
+//			"LkgKrz2OfCcIY3DCYzFvx9AlP/AWtOAhr9NW0Co6b9CE+OXYyv5YliOijErVyTCt\n" +
+//			"0ksIucac48h1i+fzmKLJBpb81OquaBpU47XUHoBNdSPI+nL1bCxk/sxm7HthK/WY\n" +
+//			"vHlROi5hT28CgYEAz726+pUkCJ8Zog+1BFrawE0mt/sImkTIAnhHhXKNhfZP8AOP\n" +
+//			"gPb5D/kI77MC7QZn5CRuBLPG6Ao9Eoww+1w1z4ojoU0JcAB1Z3nb/NKwVQMpMiTH\n" +
+//			"3R+UDk1552dw5h9oVCgSw+RwKkWkreV8vDXjrsN8a306Rs7meVZqr93G6LsCgYAo\n" +
+//			"xM9v2z5jB1KrqQwVb8+F1VLz9f4aPuFce7J7M0fzzbbujJntslUlimW3FfPUyrj0\n" +
+//			"ZXhkob+5O7MP40pOCCyYvUsoEgIwSBwI/RZWi4ZN/db+ypFQMFn8dFAZTpUxLs7B\n" +
+//			"ohJaQ5iGK5KREnmhgd2Qha4klmnbu2Iu2qGc67iivQKBgCGsyCAxFsoqJkyS3gmB\n" +
+//			"hDdm1GCQdjnpXYpUq1iDjj4bHA4VywvWuCFMJgbR05zzu8SxrRmP1vQVFaSvc/62\n" +
+//			"jeHSLiEcpYqEDEap4lpEduRtaMqD5mlgab2mw05Sbvgu8lRkywYb19w8kjzkysjB\n" +
+//			"ZfMEUlGssMg35WUH1ia1iMkr\n" +
+//			"-----END PRIVATE KEY-----";
+
+	@Value("${jwt.publicKeyPEM}")
+	private static String PUBLIC_KEY_PEM;
+
+//	private final static String PUBLIC_KEY_PEM =  "-----BEGIN PUBLIC KEY-----\n"
+//			+ "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3qwdL3v0NGlOvrtHO9qb\n"
+//			+ "koKJa34Nz9u2AUrq8ymzkeTCqm5GDQZhZLJOSomb5sZDfe8V9wfCiMgAQzwGZ2M9\n"
+//			+ "6+DvdFvI4PfSPkMplWF831TQzfUosaNkcdpSBt/eqKrqGNnNMT12QSsgEx2xqNmz\n"
+//			+ "Wksps9Xe36X2/+Z1xi+XFFedOa8c/hq0loJhu2oDaR07F5uA07zCDY9xkOeM+wVa\n"
+//			+ "09STy6XVJk7JOpZMzcAHu87s85NQ4y/bzL2hKUeQGURemBP3pjxryAxowdsAFhj/\n"
+//			+ "6pbbpiQeGMaZOkk8FPWEmH/zLb+ohWxu17HBWGL4Tl/cfDZSc78SWiHkE8dx2qFx\n"
+//			+"bQIDAQAB\n"
+//			+ "-----END PUBLIC KEY-----";
 
 	public static void main(String[] args) {
 		//SpringApplication.run(JwtgenerateApplication.class, args);
